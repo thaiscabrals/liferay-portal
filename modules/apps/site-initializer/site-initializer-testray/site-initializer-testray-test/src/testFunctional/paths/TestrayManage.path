@@ -1,12 +1,12 @@
 <html>
 <head>
-<title>TestrayManageOptions</title>
+<title>TestrayManage</title>
 </head>
 
 <body>
 <table border="1" cellpadding="1" cellspacing="1">
 <thead>
-<tr><td rowspan="1" colspan="3">TestrayManageOptions</td></tr>
+<tr><td rowspan="1" colspan="3">TestrayManage</td></tr>
 </thead>
 
 <tbody>
@@ -43,6 +43,11 @@
 <tr>
 	<td>OPTIONS_NAME</td>
 	<td>//td[contains(text(),'${value}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MANAGE_SIDEBAR</td>
+	<td>//div[contains(@class, 'dropdown-toggle') and contains(., 'Manage')]</td>
 	<td></td>
 </tr>
 </tbody>
