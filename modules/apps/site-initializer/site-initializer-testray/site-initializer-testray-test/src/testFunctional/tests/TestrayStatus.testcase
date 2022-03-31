@@ -37,10 +37,9 @@ definition {
 		Click(locator1 = "TestrayTestflow#TESTFLOW_SIDEBAR");
 
 		AssertElementPresent(locator1 = "TestrayTestflow#STATUS_ABANDONED");
-        
 	}
 
-    @description = "LPS-150028 - Verify if the user will see the results with Complete status."
+	@description = "LPS-150028 - Verify if the user will see the results with Complete status."
 	@priority = "4"
 	test CanVerifyCompleteStatus {
 		Testray.enableTestrayTasksInPortlet();
@@ -54,7 +53,7 @@ definition {
 		AssertElementPresent(locator1 = "TestrayTestflow#STATUS_COMPLETE");
 	}
 
-    @description = "LPS-150026 - Verify if the user will see the results with In Analysis status."
+	@description = "LPS-150026 - Verify if the user will see the results with In Analysis status."
 	@priority = "4"
 	test CanVerifyInAnalysisStatus {
 		Testray.enableTestrayTasksInPortlet();
@@ -70,7 +69,7 @@ definition {
 		AssertElementPresent(locator1 = "TestrayTestflow#STATUS_IN_ANALYSIS");
 	}
 
-    @description = "LPS-150027 - Verify if the user will see the results with Open status."
+	@description = "LPS-150027 - Verify if the user will see the results with Open status."
 	@priority = "4"
 	test CanVerifyOpenStatus {
 		Testray.enableTestrayTasksInPortlet();
@@ -84,7 +83,6 @@ definition {
 		Click(locator1 = "TestrayTestflow#TESTFLOW_SIDEBAR");
 
 		AssertElementPresent(locator1 = "TestrayTestflow#STATUS_OPEN");
-
-    }
+	}
 
 }
