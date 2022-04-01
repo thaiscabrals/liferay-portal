@@ -1,6 +1,7 @@
 @component-name = "portal-solutions"
 definition {
 
+	property osgi.modules.includes = "site-initializer-testray";
 	property portal.release = "false";
 	property portal.upstream = "true";
 	property testray.main.component.name = "Testray 2";
@@ -31,17 +32,17 @@ definition {
 		ApplicationsMenu.gotoSite(site = "Testray 2");
 
 		Click(
-			key_projectName = "Liferay Portal 7.2",
+			key_projectName = "Liferay Portal 7.",
 			locator1 = "Testray#PROJECT_NAME_BUTTON");
 
 		Click(locator1 = "TestrayDropdown#DROPDOWN_PROJECT");
 
 		Click(
-			key_itemvalue = "Liferay Portal 7.3",
+			key_itemvalue = "Liferay Portal 7.",
 			locator1 = "TestrayDropdown#DROPDOWN_ITEM");
 
 		AssertElementPresent(
-			key_projectName = "Liferay Portal 7.3",
+			key_projectName = "Liferay Portal 7.",
 			locator1 = "TestrayDropdown#PROJECT_NAME_BREADCRUMBS");
 	}
 
@@ -51,7 +52,7 @@ definition {
 		ApplicationsMenu.gotoSite(site = "Testray 2");
 
 		Click(
-			key_projectName = "Liferay Portal 7.2",
+			key_projectName = "Liferay Portal 7.",
 			locator1 = "Testray#PROJECT_NAME_BUTTON");
 
 		Click(locator1 = "TestrayDropdown#DROPDOWN_PROJECT");
@@ -70,7 +71,7 @@ definition {
 	test CanNotAcessDropdownOnProjectDirectory {
 		ApplicationsMenu.gotoSite(site = "Testray 2");
 
-		Click(locator1 = "Testray#TESTFLOW_RESULTS");
+		Click(locator1 = "TestrayTestflow#TESTFLOW_RESULTS");
 
 		AssertElementNotPresent(locator1 = "TestrayDropdown#DROPDOWN_PROJECT");
 	}
@@ -80,7 +81,7 @@ definition {
 	test CanNotAcessDropdownOnTestfow {
 		ApplicationsMenu.gotoSite(site = "Testray 2");
 
-		Click(locator1 = "Testray#TESTFLOW_SIDEBAR");
+		Click(locator1 = "TestrayTestflow#TESTFLOW_SIDEBAR");
 
 		AssertElementNotPresent(locator1 = "TestrayDropdown#DROPDOWN_PROJECT");
 	}
