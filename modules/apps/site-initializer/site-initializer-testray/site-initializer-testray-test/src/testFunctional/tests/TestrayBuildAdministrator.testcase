@@ -28,117 +28,117 @@ definition {
 	@description = "LPS-156438 - Verify if as an Administrator can Add a Build"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanAddBuild {
+	test AdminCanAddBuild {
 
-		// TODO LPS-156438 CanAddBuild pending implementation
+		// TODO LPS-156438 AdminCanAddBuild pending implementation
 
 	}
 
 	@description = "LPS-156513 - Verify if as an Administrator I can delete Builds"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanDeleteBuild {
+	test AdminCanDeleteBuild {
 
-		// TODO LPS-156513 CanDeleteBuild pending implementation
+		// TODO LPS-156513 AdminCanDeleteBuild pending implementation
 
 	}
 
 	@description = "LPS-156575 - Verify if as an Administrator I should be able to delete a build that contains runs"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanDeleteBuildContainsRuns {
+	test AdminCanDeleteBuildContainsRuns {
 
-		// TODO LPS-156575 pending CanDeleteBuildContainsRuns implementation
+		// TODO LPS-156575 pending AdminCanDeleteBuildContainsRuns implementation
 
 	}
 
 	@description = "LPS-156543 - Verify if as an Administrator I am able to edit Builds"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanEditRoutine {
+	test AdminCanEditRoutine {
 
-		// TODO LPS-156543 CanEditRoutine pending implementation
+		// TODO LPS-156543 AdminCanEditRoutine pending implementation
 
 	}
 
 	@description = "LPS-156546 - Verify if as an Administrator I should not be able to add a duplicate build"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanNotAddDuplicateBuild {
+	test AdminCanNotAddDuplicateBuild {
 
-		// TODO LPS-156546 CanNotAddDuplicateBuild pending implementation
+		// TODO LPS-156546 AdminCanNotAddDuplicateBuild pending implementation
 
 	}
 
 	@description = "LPS-156455 - Verify if as an Administrator cannot archive Build"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanNotArchiveBuild {
+	test AdminCanNotArchiveBuild {
 
-		// TODO LPS-156455 CanNotArchiveBuild pending implementation
+		// TODO LPS-156455 AdminCanNotArchiveBuild pending implementation
 
 	}
 
 	@description = "LPS-156557 - Verify if as an Administrator I should not be able to archive a build where its task is in analysis using"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanNotArchivedBuildInAnalysis {
+	test AdminCanNotArchivedBuildInAnalysis {
 
-		// TODO LPS-156557 CanNotArchivedBuildInAnalysis pending implementation
+		// TODO LPS-156557 AdminCanNotArchivedBuildInAnalysis pending implementation
 
 	}
 
 	@description = "LPS-156583 - Verify if as an Administrator I should be able to promote a build"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanPromoteBuild {
+	test AdminCanPromoteBuild {
 
-		// TODO LPS-156583 CanPromoteBuild pending implementation
+		// TODO LPS-156583 AdminCanPromoteBuild pending implementation
 
 	}
 
 	@description = "LPS-156585 - Verify if as an Administrator I should be able to sort the Builds Index"
 	@ignore = "Test Stub"
 	@priority = "4"
-	test CanSortCompilationBuildName {
+	test AdminCanSortCompilationBuildName {
 
-		// TODO LPS-156585 CanSortCompilationBuildName pending implementation
+		// TODO LPS-156585 AdminCanSortCompilationBuildName pending implementation
 
 	}
 
 	@description = "LPS-156588 - Verify if as an Administrator I should be able to sort the Builds Index"
 	@ignore = "Test Stub"
 	@priority = "4"
-	test CanSortCompilationBuildProductVersion {
+	test AdminCanSortCompilationBuildProductVersion {
 
-		// TODO LPS-156588 CanSortCompilationBuildProductVersion pending implementation
+		// TODO LPS-156588 AdminCanSortCompilationBuildProductVersion pending implementation
 
 	}
 
 	@description = "LPS-156586 - Verify if as an Administrator I should be able to sort the Builds Index"
 	@ignore = "Test Stub"
 	@priority = "4"
-	test CanSortCompilationBuildPromoted {
+	test AdminCanSortCompilationBuildPromoted {
 
-		// TODO LPS-156586 CanSortCompilationBuildPromoted pending implementation
+		// TODO LPS-156586 AdminCanSortCompilationBuildPromoted pending implementation
 
 	}
 
 	@description = "LPS-156580 - Verify if as an Administrator I should be able to specify a start and end parameter when fetching a build index "
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanSpecifyStartAndEndParameter {
+	test AdminCanSpecifyStartAndEndParameter {
 
-		// TODO LPS-156580 CanSpecifyStartAndEndParameter pending implementation
+		// TODO LPS-156580 AdminCanSpecifyStartAndEndParameter pending implementation
 
 	}
 
 	@description = "LPS-156592 - Verify if as an Administrator I should be able to unarchive a build"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test CanUnarchiveBuilds {
+	test AdminCanUnarchiveBuilds {
 
-		// TODO LPS-156592 CanUnarchiveBuilds pending implementation
+		// TODO LPS-156592 AdminCanUnarchiveBuilds pending implementation
 
 	}
 
