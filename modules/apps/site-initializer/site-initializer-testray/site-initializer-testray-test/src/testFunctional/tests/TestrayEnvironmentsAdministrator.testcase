@@ -25,6 +25,24 @@ definition {
 		}
 	}
 
+	@description = "This is a test for LPS-157239 - Verify if As an Administrator I should be able to add and delete a Factor Category"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test AdminCanAddAndDeleteFactorCategory {
+
+		// TODO LPS-157239 AdminCanAddAndDeleteFactorCategory pending implementation
+
+	}
+
+	@description = "This is a test for LPS-157327 - Verify if As an Administrator I should be able to add and delete a Factor Option"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test AdminCanAddAndDeleteFactorOption {
+
+		// TODO LPS-157327 AdminCanAddAndDeleteFactorOption pending implementation
+
+	}
+
 	@description = "This is a test for LPS-157231 - Verify if as an Administrator I am able to add Factor Categories"
 	@ignore = "Test Stub"
 	@priority = "5"
@@ -34,34 +52,7 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-157237 - Verify if as an Administrator I am able to delete Factor Categories"
-	@ignore = "Test Stub"
-	@priority = "5"
-	test AdminCanDeleteCategory {
-
-		// TODO LPS-157237 AdminCanDeleteCategory pending implementation
-
-	}
-
-    @description = "This is a test for LPS-157239 - Verify if As an Administrator I should be able to add and delete a Factor Category"
-	@ignore = "Test Stub"
-	@priority = "5"
-	test AdminCanAddAndDeleteFactorCategory {
-
-		// TODO LPS-157239 AdminCanAddAndDeleteFactorCategory pending implementation
-
-	}
-
-    @description = "This is a test for LPS-157307 - Verify if as an Administrator I am able to edit Factor Categories"
-	@ignore = "Test Stub"
-	@priority = "5"
-	test AdminCanEditFactorCategories {
-
-		// TODO LPS-157307 AdminCanEditFactorCategories pending implementation
-
-	}
-
-    @description = "This is a test for LPS-157309 - Verify if as an Administrator I am able to add Options"
+	@description = "This is a test for LPS-157309 - Verify if as an Administrator I am able to add Options"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanAddOptions {
@@ -70,7 +61,7 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-157321 - Verify if as an Administrator I am able to configure Default Environment Factors for a Routine"
+	@description = "This is a test for LPS-157321 - Verify if as an Administrator I am able to configure Default Environment Factors for a Routine"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanConfigureDefaultEnvironmentFactorsForRoutine {
@@ -79,16 +70,25 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-157323 - Verify if as an Administrator I am able to edit the Option Name"
+	@description = "This is a test for LPS-157237 - Verify if as an Administrator I am able to delete Factor Categories"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test AdminCanEditOptionName {
+	test AdminCanDeleteCategory {
 
-		// TODO LPS-157323 AdminCanEditOptionName pending implementation
+		// TODO LPS-157237 AdminCanDeleteCategory pending implementation
 
 	}
 
-    @description = "This is a test for LPS-157326 - Verify if as an Administrator I am able to edit the Option by changing the Category"
+	@description = "This is a test for LPS-157307 - Verify if as an Administrator I am able to edit Factor Categories"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test AdminCanEditFactorCategories {
+
+		// TODO LPS-157307 AdminCanEditFactorCategories pending implementation
+
+	}
+
+	@description = "This is a test for LPS-157326 - Verify if as an Administrator I am able to edit the Option by changing the Category"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanEditOptionChangingCategory {
@@ -97,16 +97,16 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-157327 - Verify if As an Administrator I should be able to add and delete a Factor Option"
+	@description = "This is a test for LPS-157323 - Verify if as an Administrator I am able to edit the Option Name"
 	@ignore = "Test Stub"
 	@priority = "5"
-	test AdminCanAddAndDeleteFactorOption {
+	test AdminCanEditOptionName {
 
-		// TODO LPS-157327 AdminCanAddAndDeleteFactorOption pending implementation
+		// TODO LPS-157323 AdminCanEditOptionName pending implementation
 
 	}
 
-    @description = "This is a test for LPS-157328 - Verify if As an Administrator I should not be able to add a duplicate Factor Category"
+	@description = "This is a test for LPS-157328 - Verify if As an Administrator I should not be able to add a duplicate Factor Category"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanNotAddCuplicateFactorCategory {

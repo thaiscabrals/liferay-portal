@@ -34,7 +34,7 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-156679 - Verify that as an Administrator I can delete Case Types"
+	@description = "This is a test for LPS-156679 - Verify that as an Administrator I can delete Case Types"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanDeleteCaseTypes {
@@ -43,7 +43,7 @@ definition {
 
 	}
 
-    @description = "This is a test for LPS-156681 - Verify if the Administrator can Edit Case Types"
+	@description = "This is a test for LPS-156681 - Verify if the Administrator can Edit Case Types"
 	@ignore = "Test Stub"
 	@priority = "5"
 	test AdminCanEditCaseTypes {

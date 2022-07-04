@@ -34,6 +34,24 @@ definition {
 
 	}
 
+	@description = "This is a test for LPS-157540 - Verify if as an Administrator I should be able to archive a build "
+	@ignore = "Test Stub"
+	@priority = "5"
+	test AdminCanArchiveBuild {
+
+		// TODO LPS-157540 AdminCanArchiveBuild pending implementation
+
+	}
+
+	@description = "This is a test for LPS-157539 - Verify if as an Administrator I should be able to Autoanalyze Builds in a Routine and assert that the Assignee, Comments, Issues have been copied"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test AdminCanAutoanalyzeBuildsInRoutine {
+
+		// TODO LPS-157539 AdminCanAutoanalyzeBuildsInRoutine pending implementation
+
+	}
+
 	@description = "This is a test for LPS-156513 - Verify if as an Administrator I can delete Builds"
 	@ignore = "Test Stub"
 	@priority = "5"
@@ -57,7 +75,7 @@ definition {
 	@priority = "5"
 	test AdminCanEditBuild {
 
-        // TODO LPS-156543 AdminCanEditRoutine pending implementation
+		// TODO LPS-156543 AdminCanEditRoutine pending implementation
 
 	}
 
@@ -84,7 +102,7 @@ definition {
 	@priority = "5"
 	test AdminCanNotArchiveBuildInAnalysis {
 
-        // TODO LPS-156557 AdminCanNotArchivedBuildInAnalysis pending implementation
+		// TODO LPS-156557 AdminCanNotArchivedBuildInAnalysis pending implementation
 
 	}
 
@@ -102,7 +120,7 @@ definition {
 	@priority = "4"
 	test AdminCanSortBuildByName {
 
-        // TODO LPS-156585 AdminCanSortCompilationBuildName pending implementation
+		// TODO LPS-156585 AdminCanSortCompilationBuildName pending implementation
 
 	}
 
@@ -111,7 +129,7 @@ definition {
 	@priority = "4"
 	test AdminCanSortCompilationBuildProductVersion {
 
-        // TODO LPS-156588 AdminCanSortCompilationBuildProductVersion pending implementation
+		// TODO LPS-156588 AdminCanSortCompilationBuildProductVersion pending implementation
 
 	}
 
@@ -130,24 +148,6 @@ definition {
 	test AdminCanUnarchiveBuilds {
 
 		// TODO LPS-156592 AdminCanUnarchiveBuilds pending implementation
-
-	}
-
-	@description = "This is a test for LPS-157540 - Verify if as an Administrator I should be able to archive a build "
-	@ignore = "Test Stub"
-	@priority = "5"
-	test AdminCanArchiveBuild {
-
-		// TODO LPS-157540 AdminCanArchiveBuild pending implementation
-
-	}
-
-	@description = "This is a test for LPS-157539 - Verify if as an Administrator I should be able to Autoanalyze Builds in a Routine and assert that the Assignee, Comments, Issues have been copied"
-	@ignore = "Test Stub"
-	@priority = "5"
-	test AdminCanAutoanalyzeBuildsInRoutine {
-
-		// TODO LPS-157539 AdminCanAutoanalyzeBuildsInRoutine pending implementation
 
 	}
 
