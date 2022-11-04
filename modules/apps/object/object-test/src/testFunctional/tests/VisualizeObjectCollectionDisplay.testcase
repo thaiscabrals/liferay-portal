@@ -24,6 +24,7 @@ definition {
 	@description = "LPS-135386 - Verify if the user can display the entries on a table format"
 	@priority = "5"
 	test CanDisplayEntriesOnTableFormat {
+		property portal.upstream = "quarantine";
 		property portal.acceptance = "true";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -158,6 +159,7 @@ definition {
 	@description = "LPS-133865 - Verify if the Object entries are rendered inside the Collection Display fragment"
 	@priority = "5"
 	test ObjectEntriesAreRendered {
+		property portal.upstream = "quarantine";
 		property portal.acceptance = "true";
 
 		ObjectAdmin.addObjectViaAPI(
