@@ -59,6 +59,7 @@ definition {
 		ObjectAdmin.gotoAddObjectAction();
 
 		ObjectAdmin.fillObjectAction(
+			actionLabel = "${actionLabel}",
 			actionDescription = "${actionDescription}",
 			actionLabel = "${actionLabel}",
 			actionName = "${actionName}",
@@ -957,6 +958,12 @@ definition {
 	}
 
 	macro fillObjectAction {
+		if (isSet(actionLabel)) {
+            Type(
+                locator1 = "ObjectAdmin#ACTION_LABEL_FIELD",
+                value1 = "${actionLabel}");
+        }
+
 		if (isSet(actionLabel)) {
 			Type(
 				locator1 = "ObjectAdmin#ACTION_LABEL_FIELD",
