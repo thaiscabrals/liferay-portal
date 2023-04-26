@@ -1092,7 +1092,7 @@ definition {
 
 			LexiconEntry.gotoAdd();
 
-			Click(
+			ClickNoError(
 				key_kebabOption = "Select Existing One",
 				locator1 = "ObjectAdmin#KEBAB_MENU_OPTION");
 
