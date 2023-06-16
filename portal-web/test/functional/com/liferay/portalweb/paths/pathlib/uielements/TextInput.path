@@ -272,7 +272,7 @@
 </tr>
 <tr>
 	<td>ENTER_AGAIN</td>
-	<td>//div[label[contains(.,'Enter Again')]]/input</td>
+	<td>//div[label[contains(.,'Reenter Password')]]/input</td>
 	<td></td>
 </tr>
 <tr>
