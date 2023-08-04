@@ -477,7 +477,15 @@ definition {
 
 		DataEngine.duplicate(fieldFieldLabel = "Texto");
 
-		WebContentStructures.saveCP();
+		WaitForElementPresent(
+			key_text = "Save",
+			locator1 = "Button#ANY");
+
+		DoubleClick(
+			key_text = "Save",
+			locator1 = "Button#ANY");
+
+		Alert.viewSuccessMessage();
 
 		WebContentStructures.viewCP(structureName = ${defaultStructureName});
 
