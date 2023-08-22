@@ -162,7 +162,7 @@ definition {
 
 		AssertElementPresent(locator1 = "DocumentsAndMedia#SORTED_DOWN_ICON");
 
-		ManagementBar.viewFilterAndOrder(menuItem = "Modified Date");
+		ManagementBar.viewFilterAndOrderItem(menuItem = "Modified Date");
 
 		DMNavigator.openDocumentsAndMediaAdmin(siteURLKey = "site-name2");
 
