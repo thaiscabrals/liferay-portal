@@ -1,6 +1,92 @@
 definition {
 
 	@summary = "Default summary"
+	macro addObjectFolderViaUi(folderLabel = null, folderName = null) {
+		Click(locator1 = "ObjectAdmin#ADD_OBJECT_FOLDER");
+
+		Type(
+			locator1 = "ObjectAdmin#ADD_FOLDER_LABEL",
+			value1 = ${folderLabel});
+
+		Type(
+			locator1 = "ObjectAdmin#DETAILS_NAME_CUSTOM_OBJECT",
+			value1 = ${folderName});
+
+		Click(locator1 = "ObjectAdmin#CREATE_FOLDER_BUTTON");
+	}
+
+	@summary = "Default summary"
+	macro deleteFolder(folderName = null) {
+		Click(locator1 = "ObjectAdmin#DELETE_FOLDER");
+
+		SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
+
+		Type(
+			locator1 = "ObjectAdmin#PLACEHOLDER_DELETE_OBJECT",
+			value1 = ${folderName});
+
+		Click(locator1 = "Form#SIDEBAR_DELETE_FIELD_MODAL_DELETE_BUTTON");
+	}
+
+	@summary = "Default summary"
+	macro editFolderPermissionsInModelBuilder(owner = null, powerUser = null, permissionsList = null, analyticsAdministrator = null, siteMember = null, publicationsUser = null, guest = null, siteContentReviewer = null, permissionsName = null, portalContentReviewer = null, user = null) {
+		Click(locator1 = "ObjectAdmin#EDIT_FOLDER_PERMISSIONS");
+
+		ObjectCustomViews.selectAnyPermissions(
+			analyticsAdministrator = ${analyticsAdministrator},
+			guest = ${guest},
+			key_permissionName = ${permissionsName},
+			owner = ${owner},
+			permissionsName = ${permissionsList},
+			portalContentReviewer = ${portalContentReviewer},
+			powerUser = ${powerUser},
+			publicationsUser = ${publicationsUser},
+			siteContentReviewer = ${siteContentReviewer},
+			siteMember = ${siteMember},
+			user = ${user});
+	}
+
+	@summary = "Default summary"
+	macro editObjectFolderViaUi(folderLabel = null, owner = null, newLanguage = null, permissionsList = null, siteContentReviewer = null, permissionsName = null, externalReferenceCode = null, powerUser = null, analyticsAdministrator = null, siteMember = null, publicationsUser = null, guest = null, portalContentReviewer = null, user = null, optionSetValue = null) {
+		Click(locator1 = "ObjectAdmin#FOLDER_ACTIONS");
+
+		if (${optionSetValue} == "Edit Value and ERC") {
+			Click(locator1 = "ObjectAdmin#EDIT_LABEL_AND_ERC");
+		}
+
+		if (isSet(newLanguage)) {
+			ObjectAdmin.changeLabelLanguage(newLanguage = ${newLanguage});
+		}
+
+		if (isSet(folderLabel)) {
+			CreateObject.editLabel(labelName = ${folderLabel});
+		}
+
+		if (isSet(externalReferenceCode)) {
+			Type(
+				key_externalReferenceCode = ${externalReferenceCode},
+				locator1 = "ObjectAdmin#EXTERNAL_REFERENCE_CODE_FOLDER");
+		}
+
+		if (${optionSetValue} == "Folder Permissions") {
+			ObjectModelBuilder.editFolderPermissionsInModelBuilder(
+				analyticsAdministrator = ${analyticsAdministrator},
+				guest = ${guest},
+				key_permissionName = ${permissionsName},
+				owner = ${owner},
+				permissionsName = ${permissionsList},
+				portalContentReviewer = ${portalContentReviewer},
+				powerUser = ${powerUser},
+				publicationsUser = ${publicationsUser},
+				siteContentReviewer = ${siteContentReviewer},
+				siteMember = ${siteMember},
+				user = ${user});
+		}
+
+		CreateObject.saveObject();
+	}
+
+	@summary = "Default summary"
 	macro openObjectFolderInModelBuilder(baseURL = null) {
 		if (!(isSet(objectFolderName))) {
 			var objectFolderName = "Uncategorized";
