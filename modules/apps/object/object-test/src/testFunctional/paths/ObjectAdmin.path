@@ -640,6 +640,51 @@
 		<td>//div[contains(@class,'card-body')]//button[contains(text(), '${key_currentOption}')]</td>
 		<td></td>
 	</tr>
+	<tr>
+		<td>ADD_OBJECT_FOLDER</td>
+		<td>//button[contains(@class, 'component-action btn') and contains(@aria-label, 'Add Object Folder')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>CREATE_FOLDER_BUTTON</td>
+		<td>//button[contains(text(),'Create Folder')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>EDIT_LABEL_AND_ERC</td>
+		<td>//button[contains(@value, 'editFolder')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>FOLDER_ACTIONS</td>
+		<td>//button[contains(@aria-label, 'folder-actions')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>EDIT_FOLDER_PERMISSIONS</td>
+		<td>//button[contains(@value, 'folderPermissions')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>DELETE_FOLDER</td>
+		<td>//button[contains(@value, 'deleteFolder')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>EXTERNAL_REFERENCE_CODE_FOLDER</td>
+		<td>//input[contains(@name,'externalReferenceCode')and contains(@value,'${key_externalReferenceCode}')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>ADD_FOLDER_LABEL</td>
+		<td>//input[contains(@name, 'label')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>SIDEBAR_ITEM_MODEL_BUILDER</td>
+		<td>//*[contains(@class, 'treeview-item')]//*[contains(text(), '${folderLabel}')]</td>
+		<td></td>
+	</tr>
 </tbody>
 </table>
 </body>
