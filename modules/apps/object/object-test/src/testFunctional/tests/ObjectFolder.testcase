@@ -23,6 +23,45 @@ definition {
 		}
 	}
 
+	@description = "LPS-185675 - Verify that, when the language is edited, the user will see the respective labels in the current language"
+	@priority = 3
+	test CanTranslateObjectFolderLabels {
+		property custom.properties = "feature.flag.LPS-148856=true";
+
+		task ("Given an object folder with Portuguese localized labels") {
+			ObjectAdmin.openObjectAdmin();
+
+			ObjectModelBuilder.addObjectFolderViaUi(
+				folderLabel = "Object Folder",
+				folderName = "ObjectFolder");
+
+			ObjectModelBuilder.editObjectFolderViaUi(
+				folderLabel = "Pasta de Objetos de Teste",
+				newLanguage = "pt_BR",
+				optionSetValue = "Edit Value and ERC");
+		}
+
+		task ("and Given the user's language is Portuguese") {
+			UserBar.gotoDropdownItem(dropdownItem = "Account Settings");
+
+			MyAccount.changeUserLanguage(
+				languageName = "português (Brasil)",
+				saveButton = "Save");
+		}
+
+		task ("When the user accesses the objects admin page") {
+			ObjectAdmin.openObjectAdmin();
+
+			ObjectModelBuilder.openObjectFolderInModelBuilder(folderLabel = "Object Folder");
+		}
+
+		task ("Then the user sees the labels in Portuguese in the sidebar") {
+			AssertElementPresent(
+				folderLabel = "Pasta de Objetos de Teste",
+				locator1 = "ObjectAdmin#SIDEBAR_ITEM_MODEL_BUILDER");
+		}
+	}
+
 	@description = "LPS-185675 Verify that when deleting a object folder with object definitions inside, the object definitions will be moved to the uncategorized folder"
 	@priority = 4
 	test ObjectDefinitionsAreMovedAfterFolderDeletion {
