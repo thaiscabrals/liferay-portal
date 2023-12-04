@@ -55,6 +55,11 @@
 		<td>//div[@id='${key_folderLabel}']//*[contains(@class, 'icon-link')]/../../following-sibling::div//span[text()='${key_objectLabel}']</td>
 		<td></td>
 	</tr>
+	<tr>
+		<td>ADD_FIELD_OR_RELATIONSHIP</td>
+		<td>//div[contains(@class,'lfr-objects__model-builder-node-container') and contains(., '${key_optionName}')]//span[contains(.,'Add Field or Relationship')]</td>
+		<td></td>
+	</tr>
 </tbody>
 </table>
 </body>
