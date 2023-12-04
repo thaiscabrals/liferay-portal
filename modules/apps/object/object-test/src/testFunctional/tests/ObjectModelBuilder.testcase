@@ -22,6 +22,47 @@ definition {
 		}
 	}
 
+	@description = "LPS-185679 - Verify the user is able to add a picklist field in model builder view"
+	@priority = 4
+	test CanAddPicklistField {
+		task ("Given a picklist with an item") {
+			Picklist.addPicklistViaAPI(picklistName = "customPicklist");
+
+			Picklist.addPicklistItemViaAPI(
+				itemKey = "item1",
+				itemName = "item1",
+				picklistName = "Custom Picklist");
+		}
+
+		task ("and Given a custom object definition in model builder view") {
+			ObjectAdmin.addObjectViaAPI(
+				labelName = "Custom Object 199361",
+				objectName = "CustomObject199361",
+				pluralLabelName = "Custom Objects 199361");
+
+			ObjectModelBuilder.openObjectFolderInModelBuilder();
+		}
+
+		task ("When the user adds a picklist field") {
+			Click(
+				key_optionName = "Custom Object 199361",
+				locator1 = "ObjectModelBuilder#ADD_FIELD_OR_RELATIONSHIP");
+
+			ObjectModelBuilder.addFieldInModelBuilder(
+				fieldLabel = "Field Picklist",
+				fieldPicklist = "customPicklist",
+				fieldType = "Picklist");
+		}
+
+		task ("Then the picklist field is added to the object definition card") {
+			ObjectModelBuilder.selectObjectNode(objectLabel = "Custom Object 199361");
+
+			AssertElementPresent(
+				fieldLabel = "Field Picklist",
+				locator1 = "ObjectModelBuilder#OBJECT_FIELD_NODE");
+		}
+	}
+
 	@description = "LPS-148856 - Verify an error message is seen when attempting to publish invalid object definitions in model builder view"
 	@priority = 5
 	test CannotPublishObjectDefinitionsWithErrors {
