@@ -1,5 +1,51 @@
 definition {
 
+	@summary = "Adding a Relationship via Model Builder"
+	macro addObjectRelationshipViaModelBuilder(invalidEntry = null, parameterOption = null, name = null, label = null, type = null, object = null,) {
+		Click(
+			key_kebabOption = "Add Relationship",
+			locator1 = "ObjectAdmin#KEBAB_MENU_OPTION");
+
+		SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
+
+		Type(
+			locator1 = "ObjectAdmin#LABEL_OBJECT_RELATIONSHIP",
+			value1 = ${relationshipLabel});
+
+		if (isSet(relationshipType)) {
+			Click(locator1 = "ObjectAdmin#RELATIONSHIPS_TYPE_FORM");
+
+			Click(
+				key_type = ${relationshipType},
+				locator1 = "ObjectAdmin#SELECT_RELATIONSHIPS_TYPE_OPTION");
+		}
+
+		if (isSet(object)) {
+			Click(locator1 = "ObjectCustomViews#SELECT_AUTO_COMPLETE");
+
+			Click(
+				key_columnOption = ${object},
+				locator1 = "ObjectCustomViews#SELECT_AUTO_COMPLETE_OPTION");
+		}
+
+		if (isSet(relationshipName)) {
+			Type(
+				locator1 = "ObjectAdmin#NAME_OBJECT_RELATIONSHIP",
+				value1 = ${relationshipName});
+		}
+
+		if (isSet(parameterOption)) {
+			ObjectRelationships.editRelationshipsParameter(parameterOption = ${parameterOption});
+		}
+
+		if (${invalidEntry} == "true") {
+			Button.clickSave();
+		}
+		else {
+			PortletEntry.save();
+		}
+	}
+
 	@summary = "Default summary"
 	macro openObjectFolderInModelBuilder(baseURL = null) {
 		if (!(isSet(objectFolderName))) {
