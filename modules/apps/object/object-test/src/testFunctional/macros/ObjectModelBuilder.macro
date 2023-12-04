@@ -1,5 +1,111 @@
 definition {
 
+	@summary = "Add field in Model Builder"
+	macro addFieldInModelBuilder(fieldTimeStorage = null, fieldName = null, acceptUniqueValuesOnly = null, formulaFieldOption = null, fieldPicklist = null, itemName = null, field = null, fieldLabel = null, sorting = null, markAsState = null, fieldAttachment = null, functionType = null, relationship = null, fieldType = null, isMandatory = null) {
+		Click(
+			key_kebabOption = "Add Field",
+			locator1 = "ObjectAdmin#KEBAB_MENU_OPTION");
+
+		SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
+
+		Type(
+			locator1 = "ObjectField#LABEL_INPUT",
+			value1 = ${fieldLabel});
+
+		if (isSet(fieldName)) {
+			Type(
+				locator1 = "ObjectField#NAME_FIELD",
+				value1 = ${fieldName});
+		}
+
+		if (isSet(fieldType)) {
+			ObjectField.selectType(fieldType = ${fieldType});
+
+			if (${fieldType} == "Date and Time") {
+				ObjectAdmin.selectDropdownItem(
+					currentOption = ${sorting},
+					labelName = "Time Storage",
+					optionName = ${fieldTimeStorage});
+			}
+
+			if (${fieldType} == "Attachment") {
+				ObjectAdmin.selectDropdownItem(
+					currentOption = "Select an option",
+					labelName = "Request Files",
+					optionName = ${fieldAttachment});
+
+				var enableShowFiles = ${enableShowFiles};
+
+				if (isSet(enableShowFiles)) {
+					Check.checkNotVisible(
+						key_toggleSwitchLabel = "Show Files in Documents and Media",
+						locator1 = "ToggleSwitch#ANY_TOGGLE_SWITCH");
+				}
+			}
+
+			if (${fieldType} == "Aggregation") {
+				Click(locator1 = "ObjectField#LABEL_RELATIONSHIP");
+
+				Click(
+					key_dropdownItem = ${relationship},
+					locator1 = "ObjectAdmin#SELECT_DROPDOWN_ITEM_DEFAULT_VALUE");
+
+				ObjectAdmin.selectDropdownItem(
+					currentOption = "Select an option",
+					labelName = "Type",
+					optionName = ${functionType});
+
+				if (isSet(field)) {
+					Click(locator1 = "ObjectField#LABEL_FIELD");
+
+					Click(
+						key_dropdownItem = ${field},
+						locator1 = "ObjectAdmin#SELECT_DROPDOWN_ITEM_DEFAULT_VALUE");
+				}
+			}
+		}
+
+		if (${isMandatory} == "true") {
+			ObjectField.checkToggleMandatory();
+		}
+
+		if (${acceptUniqueValuesOnly} == "true") {
+			Check.checkToggleSwitch(
+				key_toggleSwitchLabel = "Accept Unique Values Only",
+				locator1 = "ToggleSwitch#ANY_TOGGLE_SWITCH");
+		}
+
+		if (isSet(fieldPicklist)) {
+			Click(locator1 = "Picklist#SELECT_PICKLIST_AUTO_COMPLETE");
+
+			Click(
+				key_columnOption = ${fieldPicklist},
+				locator1 = "Picklist#SELECT_PICKLIST");
+
+			if (${markAsState} == "true") {
+				Check.checkToggleSwitch(locator1 = "ObjectField#MARK_AS_STATE_TOGGLE");
+
+				ObjectAdmin.selectDropdownItem(
+					currentOption = "Choose an Option",
+					labelName = "Default Value",
+					optionName = ${itemName});
+			}
+		}
+
+		if (isSet(formulaFieldOption)) {
+			ObjectAdmin.selectDropdownItem(
+				currentOption = "Select an option",
+				labelName = "Output",
+				optionName = ${formulaFieldOption});
+		}
+
+		Button.clickSave();
+
+		WaitForVisible(
+			key_fieldLabel = ${fieldLabel},
+			locator1 = "ObjectAdmin#VIEW_OBJECT_FIELD_LABEL");
+	}
+
 	@summary = "Default summary"
 	macro openObjectFolderInModelBuilder(baseURL = null) {
 		if (!(isSet(objectFolderName))) {
