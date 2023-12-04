@@ -22,6 +22,82 @@ definition {
 		}
 	}
 
+	@description = "LPS-185676 - Verify that a relationship between two objects in different folders can be deleted"
+	@priority = 5
+	test CanDeleteObjectRelationshipFromDifferentFolders {
+		task ("Given two object definitions, Object A and Object B, in different folders") {
+			for (var nameFolder : list "A,B") {
+				JSONObjectFolder.addFolder(
+					folderLabel = "Custom Folder ${nameFolder}",
+					folderName = "CustomFolder${nameFolder}");
+			}
+
+			for (var label : list "A,B") {
+				ObjectAdmin.openObjectAdmin();
+
+				Click.javaScriptClick(
+					folderLabel = "Custom Folder ${label}",
+					locator1 = "ObjectAdmin#SIDEBAR_ITEM");
+
+				ObjectAdmin.addNewObject(
+					fieldLabelName = "Custom Object ${label}",
+					fieldName = "CustomObject${label}",
+					pluralLabelName = "Custom Objects ${label}");
+
+				CreateObject.saveObject();
+			}
+		}
+
+		task ("and Given a relationship between Object A and Object B") {
+			ObjectAdmin.openObjectAdmin();
+
+			ObjectModelBuilder.openObjectFolderInModelBuilder(objectFolderName = "Custom Folder A");
+
+			Click(
+				key_optionName = "Custom Object A",
+				locator1 = "ObjectModelBuilder#ADD_FIELD_OR_RELATIONSHIP");
+
+			ObjectModelBuilder.addObjectRelationshipViaModelBuilder(
+				object = "Custom Object B",
+				relationshipLabel = "Relationship",
+				relationshipType = "One to Many");
+
+			Refresh();
+		}
+
+		task ("and Given the user is viewing the folder that contains Object A") {
+			AssertElementPresent(
+				locator1 = "ObjectModelBuilder#OBJECT_DEFINITION_NODE",
+				objectLabel = "Custom Object B");
+		}
+
+		task ("When the user deletes the relationship") {
+			Click(
+				key_optionName = "Relationnship",
+				locator1 = "ObjectModelBuilder#EDGE_RELATIONSHIP");
+
+			Click(locator1 = "Icon#DELETE");
+
+			SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
+
+			Type(
+				locator1 = "ObjectAdmin#PLACEHOLDER_DELETE_RELATIONSHIP",
+				value1 = "relationship");
+
+			Click(locator1 = "Form#SIDEBAR_DELETE_FIELD_MODAL_DELETE_BUTTON");
+		}
+
+		task ("Then the relationship is deleted") {
+			Alert.viewSuccessMessage();
+		}
+
+		task ("and Then the card for Object B disappears") {
+			AssertElementNotPresent(
+				locator1 = "ObjectModelBuilder#OBJECT_DEFINITION_NODE",
+				objectLabel = "Custom Object B");
+		}
+	}
+
 	@description = "LPS-148856 - Verify an error message is seen when attempting to publish invalid object definitions in model builder view"
 	@priority = 5
 	test CannotPublishObjectDefinitionsWithErrors {
