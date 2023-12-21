@@ -107,7 +107,6 @@ definition {
 	@priority = 5
 	test ConfigureDisplayTimeZone {
 		property ci.retries.disabled = "true";
-		property portal.acceptance = "quarantine";
 
 		CalendarNavigator.gotoConfiguration();
 
